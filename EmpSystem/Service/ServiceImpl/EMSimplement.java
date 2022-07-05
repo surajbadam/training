@@ -146,7 +146,7 @@ public class EMSimplement implements EMS{
         if(al.isEmpty())
             throw new ResponseException("No Employee present to Update");
         System.out.println("choose the option which you want to update");
-        System.out.println("1.name\t2.salary\t3.Designation");
+        System.out.println("1.name\t2.Designation\t3.Salary");
         int choice=sc.nextInt();
         switch(choice){
             case 1: System.out.println("Please Enter Employee name:");
@@ -173,7 +173,6 @@ public class EMSimplement implements EMS{
                                 try {
                                     throw new ResponseException("Salary can't be decreased");
                                 } catch (ResponseException e) {
-                                    // TODO Auto-generated catch block
                                     System.out.println(e.getMessage());
                                 }
                             }
