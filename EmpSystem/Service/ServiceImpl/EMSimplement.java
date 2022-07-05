@@ -139,7 +139,7 @@ public class EMSimplement implements EMS{
     }
     
     public void updateEmployee(ArrayList<Employee> al) throws ResponseException{
-        System.out.println("Please enter the Employee id you want to update");
+        System.out.println("Please enter the Employee id that you want to update");
         //Scanner sc=new Scanner(System.in);
         int id=sc.nextInt();
         boolean flag[]=new boolean[]{false};
