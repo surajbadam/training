@@ -142,7 +142,8 @@ public class EMSimplement implements EMS{
         System.out.println("Please enter the Employee id you want to update");
         //Scanner sc=new Scanner(System.in);
         int id=sc.nextInt();
-        boolean flag=false;
+        boolean flag[]=new boolean[]{false};
+        //Boolean flag=new Boolean(true);
         if(al.isEmpty())
             throw new ResponseException("No Employee present to Update");
         System.out.println("choose the option which you want to update");
@@ -152,18 +153,21 @@ public class EMSimplement implements EMS{
             case 1: System.out.println("Please Enter Employee name:");
                     String name=sc.next();
                     al.forEach(employee -> {
-                        if(employee.getId()==id)
+                        if(employee.getId()==id){
                             employee.setName(name);
+                            flag[0]=true;
+                        }
                     } );
-                    flag=true;
+                    
                     break;
             case 2:System.out.println("Please enter Employee designation:");
                     String designation=sc.next();
                     al.forEach(employee->{
-                        if(employee.getId()==id)
+                        if(employee.getId()==id){
                             employee.setDesignation(designation);
+                            flag[0]=true;
+                        }
                     });
-                    flag=true;
                     break;
             case 3:System.out.println("Please enter Employee Salary:");
                     float salary=sc.nextFloat();
@@ -178,13 +182,13 @@ public class EMSimplement implements EMS{
                             }
                             else{
                                 employee.setSalary(salary);
+                                flag[0]=true;
                             }
                         }
                     });
-                    flag=true;
                     break;    
         }
-        if(flag==true)
+        if(flag[0]==true)
             System.out.println("Updated Successfully");
         else
             throw new ResponseException("No field present with provided details");

@@ -2,6 +2,8 @@ package EmpSystem.Service.ServiceImpl;
 
 import java.util.Scanner;
 
+import EmpSystem.Service.Greeting;
+
 public class GreetImplement implements Greeting{
     
     @Override
